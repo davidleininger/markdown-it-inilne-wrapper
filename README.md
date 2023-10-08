@@ -13,11 +13,10 @@ Markup uses the same conditions as CommonMark [emphasis](http://spec.commonmark.
 
 ## Install
 
-node.js, browser:
+node.js
 
 ```bash
 npm install markdown-it-inline-wrapper --save
-bower install markdown-it-inline-wrapper --save
 ```
 
 ## Use
