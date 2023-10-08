@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <title>Plugin Demonstration</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/markdown-it@12/dist/markdown-it.min.js"></script>
+    <script src="../dist/markdown-it-inline-wrapper.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="header">
+        <h1>markdown-it-inline-wrapper</h1>
+      </div>
+      <div class="content">
+        <p>
+          This is a minimalist demonstration of the
+          <a href="https://github.com/davidleininger/markdown-it-inline-wrapper">
+            markdown-it-inline-wrapper
+          </a>
+          plugin.
+        </p>
+        <p>
+          Simply write in the text box below, then click away, and the text will be
+          rendered.
+        </p>
+
+      <h2>Input</h2>
+        <textarea id="inputtext" class="inputtext">
+# Inline Wrapper Demo
+
+This test uses the `markdown-it-inline-wrapper` plugin. This plugin allow you to wrap content in `==` inline and it will wrap it in a `div` in the output.
+
+Here is content ==this is in a `div`== and this is still in the `p` tag.
+
+- ==This is a list item in a div==
+- This is another list item but not in a div
+        </textarea>
+        <h2>Rendered Markdown</h2>
+        <div id="renderer" class="rendered"></div>
+        <h2>Output Markup</h2>
+        <div id="output" class="output">
+          <pre>
+            <code>
+            </code>
+          </pre>
+        </div>
+      </div>
+    </div>
+    <noscript>You need to enable JavaScript to run this app! </noscript>
+    <script>
+      // get elements
+      var inputText = document.getElementById("inputtext")
+      var renderer = document.getElementById("renderer")
+      var output = document.querySelector("#output pre code")
+
+      // setup change handler
+      inputText.onchange = handleChange
+      function handleChange(e) {
+        const text = window
+          .markdownit()
+          .use(window.markdownItInlineWrapper)
+          .render(e.target.value)
+        renderer.innerHTML = text
+        output.textContent = text
+      }
+
+      // trigger change handler for first render
+      const event = new Event("change")
+      inputText.dispatchEvent(event)
+    </script>
+  </body>
+</html>

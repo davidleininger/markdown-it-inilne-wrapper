@@ -1,0 +1,6 @@
+# dev stuff
+node_modules/
+dist/
+
+# local configuration
+.vscode/

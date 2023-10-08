@@ -1,0 +1,30 @@
+{
+  "name": "markdown-it-inline-wrapper",
+  "version": "1.0.0",
+  "description": "inline wrapper (<div>) tag for markdown-it markdown parser.",
+  "keywords": ["markdown-it-plugin", "markdown-it", "markdown", "div"],
+  "repository": "https://github.com/davidleininger/markdown-it-inline-wrapper",
+  "license": "MIT",
+  "files": ["index.js", "dist/"],
+  "main": "dist/markdown-it-inline-wrapper.js",
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "http-server -p 8888 -o docs",
+    "lint": "eslint .",
+    "test": "vitest"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^17.0.0",
+    "@rollup/plugin-node-resolve": "^11.0.1",
+    "eslint": "^7.16.0",
+    "markdown-it": "markdown-it/markdown-it",
+    "rollup": "^2.35.1",
+    "rollup-plugin-terser": "^7.0.2",
+    "vite": "^4.0.0",
+    "vite-plugin-dts": "^2.1.0",
+    "vitest": "^0.29.8"
+  },
+  "peerDependencies": {
+    "markdown-it": ">=5"
+  }
+}

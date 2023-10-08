@@ -1,0 +1,62 @@
+:root {
+  --accent: #00857E;
+  --accent-dark: #005D58;
+  --accent-subtle: #B2C2C1;
+  --accent-light: #F3FFFE;
+}
+
+body {
+  font-family: sans-serif;
+  margin: 0;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-decoration-style: wavy;
+  text-decoration-color: var(--accent-dark);
+}
+a:hover {
+  color: var(--accent-dark);
+  text-decoration-color: var(--accent);
+  text-decoration-style: solid;
+  text-underline-offset: 0.125em;
+}
+
+:focus {
+  outline: 2px solid var(--accent);
+  text-decoration: none;
+}
+
+.header {
+  background-color: var(--accent);
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
+
+.content {
+  padding: 10px;
+  margin: 0 auto;
+  max-width: 48rem;
+  width: 100%;
+}
+
+.inputtext, .rendered, .output {
+  margin-bottom: 12px;
+  min-height: 100px;
+  border: 1px solid var(--accent-subtle);
+  padding: 12px;
+  width: 100%;
+}
+
+.output {
+  background-color: var(--accent-light);
+  border-color: var(--accent-subtle);
+  overflow-X: auto;
+}
+
+pre, code {
+  margin: 0;
+  white-space: pre-line;
+}
