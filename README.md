@@ -32,6 +32,7 @@ md.render('==this is wrapped in a div==') // => '<p><div>this is wrapped in a di
 OR
 
 ```js
+const markdownIt = require('markdown-it');
 const markdownItInlineWrapper = require('markdown-it-inline-wrapper');
 
 var md = markdownIt().use(markdownItInlineDiv);
